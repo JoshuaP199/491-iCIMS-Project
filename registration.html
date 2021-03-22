@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <meta name="description" content="491 Registration Page"/>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    
+    
+</head>
+
+
+
+<body>
+    <div class = "registrationPage">
+        <p> Sign Up: </p>
+
+        <div id="my-signin2"></div>
+        <script>
+            function onSuccess(googleUser) {
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            }
+            function onFailure(error) {
+            console.log(error);
+            }
+            function renderButton() {
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
+            }
+        </script>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        <br><br>
+        <div class = "registrationInfo">
+            <form action = "" method="post" id = "form">
+                <input type = "text" name = "firstName" placeholder = "First Name" required> <br><br>
+                <input type = "text" name = "lastName" placeholder = "Last Name" required> <br><br>
+                <input type = "email" name = "email" placeholder = "Email" required> <br> <br>
+                <input type = "password" name = "password" placeholder = "Password" id = "password" required> <br> <br>
+                <input type = "password" name = "cPassword" placeholder = "Confirm Password" id = "cPassword" required oninput="check(this)"> <br> <br> 
+                <script>
+                    function check(input) {
+                        if (input.value != document.getElementId('password').value) {
+                            input.setCustomValidity('Passwords do not match');
+                        }
+                        else {
+                            input.setCustomValidity('');
+                        }
+                    }
+                </script>
+                <label for = "role"> Select Role: </label>
+                <select name = "role">
+                    <option value = "softwareEngineer"> Software Engineer </option>
+                    <option value = "electricalEngineer"> Electrical Engineer </option>
+                    <option value = "dataScientist"> Data Scientist </option>  
+                    <!-- is there a way to have info come from a database filled with job roles? -->
+                </select>
+
+                <br><br>
+                <button type = "submit" value = "Confirm Account" name = "register"> Confirm </button> 
+            </form> 
+            <p> Already have an account? Sign in <a href=" "> Here </a></p>
+        </div>
+    </div>
+</body>
+</html>
