@@ -1,107 +1,41 @@
-<!doctype html>
-<html>
-  <body>
-    <header id="nav" class="stickNav">
-      <div role="banner" class="nav">
-        <div class="container">
-          <a href="#" class="logo navbrand"></a>
-          <nav role="navigation" class="menu">
-            <a href="#" class="nav-link">Upload</a>
-            <a href="#" class="nav-link">Favorites</a>
-            <a href="#" class="nav-link">Profile</a>
-          </nav>
-          <div class="nav-button">
-            <div class="icon-nav-menu"></div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="searchbar">
-      <form action="/search" class="form"><input type="search" class="search-input input" maxlength="256" name="query" placeholder="Search…" id="search" required=""><input type="submit" value="Search" class="search-button button"></form>
-    </div>
-    <div>
-      <div class="row">
-        <div class="col col-3">
-          <ul role="list">
-            <li>
-              <div>
-                <a href="#" class="button">Applied</a>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="#" class="button">Needs Attention</a>
-              </div>
-            </li>
-            <li>
-              <div>
-                <a href="#" class="button">Rejections</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="col col-9">
-          <div class="layout-grid grid-2"></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <footer id="footer" class="footer">
-        <div class="container">
-          <div class="foot-flex-container">
-            <a href="#" class="footlogolink inline-block"><img src="https://i.pinimg.com/originals/e4/dd/60/e4dd600d34e420cd5f0a277fbcfc5186.png" alt="" class="logofoot"></a>
-            <div>
-              <h2 class="foothead">Contributors</h2>
-              <ul role="list" class="liststy">
-                <li>
-                  <a href="#" class="footlink">Micheal </a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Kadir</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Josh</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Meghna</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Thandar</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Ross</a>
-                </li>
-              </ul>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="calendar">
+            <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fas fa-angle-right next"></i>
             </div>
-            <div>
-              <h2 class="foothead">About Site</h2>
-              <ul role="list" class="liststy">
-                <li>
-                  <a href="#" class="footlink">Purpose</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Plan</a>
-                </li>
-              </ul>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
             </div>
-            <div>
-              <h2 class="foothead">Contact Us</h2>
-              <ul role="list" class="liststy">
-                <li>
-                  <a href="#" class="footlink">Email</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Phone</a>
-                </li>
-                <li>
-                  <a href="#" class="footlink">Site</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>JobFindr: Work in Progress</div>
+            <div class="days"></div>
         </div>
-      </footer>
     </div>
-  </body>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
