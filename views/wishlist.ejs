@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>JB Monitor - Wishlist</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+    </head>
+    <body>
+      <!-- Mobile Nav -->
+        <nav class="Responsive__Nav">
+          <ul class="Responsive__Navbar">
+            <div class="nav-links-mobile">
+              <a class='inline ' href='/dashboard'><div class="nav-link ">Dashboard</div></a>
+              <a class='inline' href='/analytics'><div class="nav-link">Analytics</div></a>
+              <a class='inline' href='/interview'><div class="nav-link">Interview</div></a>
+              <a class='inline' href='/recommendation'><div class="nav-link">Recommendation</div></a>
+              <a class='inline' href='/wishlist'><div class="nav-link active">Wishlist</div></a>
+            </div>
+          </ul>
+        </nav>
+        <li class="Navbar__Responsive">
+          <div class="Navbar__hamburger"></div>
+          <div class="Navbar__hamburger"></div>
+          <div class="Navbar__hamburger"></div>
+        </li>
+      <!-- Responsive Nav -->
+      <div class="parent">
+        <div class="div0 header-cont">
+          <div class="page-header">
+            <small class="page-title"><b>Wishlist</b></small>
+          </div>
+        </div>
+        <div class="div1 side-nav">
+          <div class="user-info vertical-align">
+            <small><b>JB Monitor</b></small>
+            <hr/>
+            <small>Welcome back,</small>
+            <b class="username"><%= currentUser.firstName %></b>
+          </div>
+          <div class="nav-links">
+            <a class='inline ' href='/dashboard'><div class="nav-link">Dashboard</div></a>
+            <a class='inline' href='/analytics'><div class="nav-link active">Analytics</div></a>
+            <a class='inline' href='/interview'><div class="nav-link">Interview</div></a>
+            <a class='inline' href='/recommendation'><div class="nav-link">Recommendation</div></a>
+            <a class='inline' href='/wishlist'><div class="nav-link active">Wishlist</div></a>
+          </div>
+          <div class="btns">
+            <a href="/account"><button class="main-button btn">Profile</button></a>
+            <a href="/logout"><button class="secondary-button btn">Logout</button></a>
+          </div>
+          <div class="moment">
+            <small><b id="date"></b></small>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script src="/assets/js/dashboard/nav.js"></script>
+</html>

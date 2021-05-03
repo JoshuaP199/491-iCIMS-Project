@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>icims - Account</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="/assets/css/accounts.css">
+    </head>
+
+    <body id="body" class="lightBG">
+      <div class="menu">
+        <small><b>icimis</b></small>
+        <a href="/logout"><b class="links">Logout</b></a>
+        <a href="/dashboard"><b class="links">Dashboard</b></a>
+        <a href="/login"><b class="links">Home</b></a>
+        <label class="switch links">
+          <input type="checkbox" name="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <hr/>
+      <header>
+        <div class="main-header">
+          <% if(currentUser != null) { %>
+            <h3 class="title">Welcome back ! <b class="underline"><%= currentUser.firstName%></b> 👋 </h3>
+          <%}%>
+          <hr/>
+          <div class="container">
+            <h4 class="title">Account Info</h4>
+            <hr>
+            <br>
+            <p><b class="underline">Username: </b><%= currentUser.userName%></p>
+            <p><b class="underline">Name: </b><%= currentUser.firstName%> <%= currentUser.lastName%></p>
+            <p><b class="underline">Email: </b><%= currentUser.email%></p>
+            <form id="update-email" method="POST" action="/api/account/update-email">
+              <input type="email" name="email" placeholder="Email" id="email-input" required="required">
+              <p><button class="main-button" id="email-btn"><b>Update Email</b></button></p>
+            </form>
+            <form id="update-username" method="POST" action="/api/account/update-username">
+              <input type="text" name="username" placeholder="Username" id="username-input" required="required">
+              <p><button class="main-button" id="uname-btn"><b>Update Username</b></button></p>
+            </form>
+          </div>
+          <% if(info && info.length > 0) { %>
+            <div>
+              <small class="alert alert-info"  id="alert" role="alert">
+                <%= info %>
+              </small>
+            </div>
+            <% } %>
+        <% if(error && error.length > 0) { %>
+          <div>
+            <small class="alert alert-danger"  id="alert" role="alert">
+              <%= error %>
+            </small>
+          </div>
+          <% } %>
+          <br>
+        </div>
+      </header>
+      <script src="/assets/js/account.js"></script>
+    </body>
+    
